@@ -1,8 +1,9 @@
 import { AccessTokenCacheItem } from "./AccessTokenCacheItem";
+import { Constants } from "./Constants";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class Storage {// Singleton
 
   private static _instance: Storage;
@@ -107,7 +108,7 @@ export class Storage {// Singleton
     if (storage) {
       let key: string;
       for (key in storage) {
-        if (storage.hasOwnProperty(key)) {
+        if (storage.hasOwnProperty(key) && key.indexOf(Constants.msal) !== -1) {
           storage[key] = "";
         }
       }

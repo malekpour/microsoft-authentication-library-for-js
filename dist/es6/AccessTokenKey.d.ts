@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class AccessTokenKey {
     authority: string;
     clientId: string;

@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = require("./Utils");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var IdToken = (function () {
     function IdToken(rawIdToken) {
         if (Utils_1.Utils.isEmpty(rawIdToken)) {

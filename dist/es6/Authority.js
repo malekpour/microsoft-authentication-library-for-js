@@ -4,8 +4,8 @@ import { XhrClient } from "./XhrClient";
 //import { AadAuthority } from "./AadAuthority";
 //import { B2cAuthority } from "./B2cAuthority";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export var AuthorityType;
 (function (AuthorityType) {
     AuthorityType[AuthorityType["Aad"] = 0] = "Aad";
@@ -13,8 +13,8 @@ export var AuthorityType;
     AuthorityType[AuthorityType["B2C"] = 2] = "B2C";
 })(AuthorityType || (AuthorityType = {}));
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class Authority {
     constructor(authority, validateAuthority) {
         this.IsValidationEnabled = validateAuthority;

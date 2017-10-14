@@ -7,8 +7,8 @@ import { XhrClient } from "./XhrClient";
 //import { B2cAuthority } from "./B2cAuthority";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export enum AuthorityType {
   Aad,
   Adfs,
@@ -16,8 +16,8 @@ export enum AuthorityType {
 }
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export abstract class Authority {
   protected constructor(authority: string, validateAuthority: boolean) {
     this.IsValidationEnabled = validateAuthority;

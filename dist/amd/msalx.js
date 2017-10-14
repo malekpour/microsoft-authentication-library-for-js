@@ -8,6 +8,12 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 define("IUri", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -16,8 +22,8 @@ define("ClientInfo", ["require", "exports", "Utils"], function (require, exports
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var ClientInfo = (function () {
         function ClientInfo(rawClientInfo) {
             if (!rawClientInfo || Utils_1.Utils.isEmpty(rawClientInfo)) {
@@ -69,8 +75,8 @@ define("IdToken", ["require", "exports", "Utils"], function (require, exports, U
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var IdToken = (function () {
         function IdToken(rawIdToken) {
             if (Utils_2.Utils.isEmpty(rawIdToken)) {
@@ -155,8 +161,8 @@ define("Utils", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var Utils = (function () {
         function Utils() {
         }
@@ -370,7 +376,7 @@ define("Utils", ["require", "exports"], function (require, exports) {
             return hex;
         };
         Utils.getLibraryVersion = function () {
-            return "0.1.1";
+            return "0.1.2";
         };
         /**
          * Given a url like https://a:b/common/d?e=f#g, and a tenantId, returns https://a:b/tenantId/d
@@ -517,8 +523,8 @@ define("ErrorMessage", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var ErrorMessage = (function () {
         function ErrorMessage() {
         }
@@ -555,10 +561,10 @@ define("XhrClient", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * XHR client for JSON endpoints
-      * https://www.npmjs.com/package/async-promise
-      * @hidden
-      */
+    * XHR client for JSON endpoints
+    * https://www.npmjs.com/package/async-promise
+    * @hidden
+    */
     var XhrClient = (function () {
         function XhrClient() {
         }
@@ -618,8 +624,8 @@ define("Authority", ["require", "exports", "Utils", "ErrorMessage", "XhrClient"]
     //import { AadAuthority } from "./AadAuthority";
     //import { B2cAuthority } from "./B2cAuthority";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var AuthorityType;
     (function (AuthorityType) {
         AuthorityType[AuthorityType["Aad"] = 0] = "Aad";
@@ -627,8 +633,8 @@ define("Authority", ["require", "exports", "Utils", "ErrorMessage", "XhrClient"]
         AuthorityType[AuthorityType["B2C"] = 2] = "B2C";
     })(AuthorityType = exports.AuthorityType || (exports.AuthorityType = {}));
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var Authority = (function () {
         function Authority(authority, validateAuthority) {
             this.IsValidationEnabled = validateAuthority;
@@ -764,8 +770,8 @@ define("AadAuthority", ["require", "exports", "Authority", "XhrClient"], functio
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var AadAuthority = (function (_super) {
         __extends(AadAuthority, _super);
         function AadAuthority(authority, validateAuthority) {
@@ -830,8 +836,8 @@ define("AccessTokenKey", ["require", "exports", "Utils"], function (require, exp
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var AccessTokenKey = (function () {
         function AccessTokenKey(authority, clientId, scopes, uid, utid) {
             this.authority = authority;
@@ -847,8 +853,8 @@ define("AccessTokenValue", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var AccessTokenValue = (function () {
         function AccessTokenValue(accessToken, idToken, expiresIn, clientInfo) {
             this.accessToken = accessToken;
@@ -864,8 +870,8 @@ define("AccessTokenCacheItem", ["require", "exports"], function (require, export
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var AccessTokenCacheItem = (function () {
         function AccessTokenCacheItem(key, value) {
             this.key = key;
@@ -879,8 +885,8 @@ define("AuthenticationRequestParameters", ["require", "exports", "Utils"], funct
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var AuthenticationRequestParameters = (function () {
         function AuthenticationRequestParameters(authority, clientId, scope, responseType, redirectUri) {
             this.authorityInstance = authority;
@@ -967,8 +973,8 @@ define("B2cAuthority", ["require", "exports", "AadAuthority", "Authority", "Util
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var B2cAuthority = (function (_super) {
         __extends(B2cAuthority, _super);
         function B2cAuthority(authority, validateAuthority) {
@@ -1056,8 +1062,8 @@ define("Constants", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var Constants = (function () {
         function Constants() {
         }
@@ -1113,6 +1119,26 @@ define("Constants", ["require", "exports"], function (require, exports) {
         });
         Object.defineProperty(Constants, "sessionState", {
             get: function () { return "session_state"; },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Constants, "msalClientInfo", {
+            get: function () { return "msal.client.info"; },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Constants, "msalError", {
+            get: function () { return "msal.error"; },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Constants, "msalErrorDescription", {
+            get: function () { return "msal.error.description"; },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Constants, "msalSessionState", {
+            get: function () { return "msal.session.state"; },
             enumerable: true,
             configurable: true
         });
@@ -1173,6 +1199,11 @@ define("Constants", ["require", "exports"], function (require, exports) {
         });
         Object.defineProperty(Constants, "renewStatus", {
             get: function () { return "msal.token.renew.status"; },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Constants, "msal", {
+            get: function () { return "msal"; },
             enumerable: true,
             configurable: true
         });
@@ -1283,6 +1314,11 @@ define("Constants", ["require", "exports"], function (require, exports) {
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(ErrorCodes, "userCancelledError", {
+            get: function () { return "user_cancelled"; },
+            enumerable: true,
+            configurable: true
+        });
         return ErrorCodes;
     }());
     exports.ErrorCodes = ErrorCodes;
@@ -1319,6 +1355,11 @@ define("Constants", ["require", "exports"], function (require, exports) {
         });
         Object.defineProperty(ErrorDescription, "userLoginError", {
             get: function () { return "User login is required"; },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(ErrorDescription, "userCancelledError", {
+            get: function () { return "User closed the popup window window and cancelled the flow"; },
             enumerable: true,
             configurable: true
         });
@@ -1478,8 +1519,8 @@ define("RequestContext", ["require", "exports", "Logger"], function (require, ex
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var RequestContext = (function () {
         function RequestContext(correlationId) {
             if (RequestContext._instance) {
@@ -1503,12 +1544,12 @@ define("RequestContext", ["require", "exports", "Logger"], function (require, ex
     }());
     exports.RequestContext = RequestContext;
 });
-define("Storage", ["require", "exports", "AccessTokenCacheItem"], function (require, exports, AccessTokenCacheItem_1) {
+define("Storage", ["require", "exports", "AccessTokenCacheItem", "Constants"], function (require, exports, AccessTokenCacheItem_1, Constants_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var Storage = (function () {
         function Storage(cacheLocation) {
             if (Storage._instance) {
@@ -1603,7 +1644,7 @@ define("Storage", ["require", "exports", "AccessTokenCacheItem"], function (requ
             if (storage) {
                 var key = void 0;
                 for (key in storage) {
-                    if (storage.hasOwnProperty(key)) {
+                    if (storage.hasOwnProperty(key) && key.indexOf(Constants_1.Constants.msal) !== -1) {
                         storage[key] = "";
                     }
                 }
@@ -1620,8 +1661,8 @@ define("RequestInfo", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var TokenResponse = (function () {
         function TokenResponse() {
             this.valid = false;
@@ -1634,16 +1675,29 @@ define("RequestInfo", ["require", "exports"], function (require, exports) {
     }());
     exports.TokenResponse = TokenResponse;
 });
-define("UserAgentApplication", ["require", "exports", "RequestContext", "User", "Storage", "Utils", "Constants", "AuthenticationRequestParameters", "Constants", "IdToken", "ClientInfo", "RequestInfo", "AccessTokenKey", "AccessTokenValue", "AuthorityFactory"], function (require, exports, RequestContext_1, User_1, Storage_1, Utils_10, Constants_1, AuthenticationRequestParameters_1, Constants_2, IdToken_1, ClientInfo_1, RequestInfo_1, AccessTokenKey_1, AccessTokenValue_1, AuthorityFactory_1) {
+define("UserAgentApplication", ["require", "exports", "RequestContext", "User", "Storage", "Utils", "Constants", "AuthenticationRequestParameters", "Constants", "IdToken", "ClientInfo", "RequestInfo", "AccessTokenKey", "AccessTokenValue", "AuthorityFactory"], function (require, exports, RequestContext_1, User_1, Storage_1, Utils_10, Constants_2, AuthenticationRequestParameters_1, Constants_3, IdToken_1, ClientInfo_1, RequestInfo_1, AccessTokenKey_1, AccessTokenValue_1, AuthorityFactory_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     var ResponseTypes = {
         id_token: "id_token",
         token: "token",
         id_token_token: "id_token token"
+    };
+    var resolveTokenOnlyIfOutOfIframe = function (target, propertyKey, descriptor) {
+        var tokenAcquisitionMethod = descriptor.value;
+        descriptor.value = function () {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                args[_i] = arguments[_i];
+            }
+            return window.parent !== window // this.isInIframe()
+                ? new Promise(function () { })
+                : tokenAcquisitionMethod.apply(this, args);
+        };
+        return descriptor;
     };
     var UserAgentApplication = (function () {
         /**
@@ -1657,8 +1711,8 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
         * @param _tokenReceivedCallback -  The function that will get the call back once this API is completed (either successfully or with a failure).
         * @param {boolean} validateAuthority -  boolean to turn authority validation on/off.
         */
-        function UserAgentApplication(clientId, authority, tokenReceivedCallback, _a) {
-            var _b = _a === void 0 ? {} : _a, _c = _b.validateAuthority, validateAuthority = _c === void 0 ? true : _c, _d = _b.cacheLocation, cacheLocation = _d === void 0 ? 'sessionStorage' : _d, _e = _b.redirectUri, redirectUri = _e === void 0 ? window.location.href.split("?")[0].split("#")[0] : _e, _f = _b.postLogoutRedirectUri, postLogoutRedirectUri = _f === void 0 ? redirectUri : _f, _g = _b.navigateToLoginRequestUrl, navigateToLoginRequestUrl = _g === void 0 ? true : _g;
+        function UserAgentApplication(clientId, authority, tokenReceivedCallback, options) {
+            if (options === void 0) { options = {}; }
             /**
             * @hidden
             */
@@ -1690,6 +1744,7 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             * True = redirects user to redirectUri
             */
             this._navigateToLoginRequestUrl = true;
+            var _a = options.validateAuthority, validateAuthority = _a === void 0 ? true : _a, _b = options.cacheLocation, cacheLocation = _b === void 0 ? 'sessionStorage' : _b, _c = options.redirectUri, redirectUri = _c === void 0 ? window.location.href.split("?")[0].split("#")[0] : _c, _d = options.postLogoutRedirectUri, postLogoutRedirectUri = _d === void 0 ? redirectUri : _d, _e = options.navigateToLoginRequestUrl, navigateToLoginRequestUrl = _e === void 0 ? true : _e;
             this.clientId = clientId;
             this.validateAuthority = validateAuthority;
             this.authority = authority || "https://login.microsoftonline.com/common";
@@ -1707,15 +1762,14 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             }
             this._cacheStorage = new Storage_1.Storage(this._cacheLocation); //cache keys msal
             this._requestContext = new RequestContext_1.RequestContext("");
+            this._openedWindows = [];
             window.msal = this;
             window.callBackMappedToRenewStates = {};
             window.callBacksMappedToRenewStates = {};
-            if (!window.opener) {
-                var isCallback = this.isCallback(window.location.hash);
-                if (isCallback) {
-                    var self = this;
-                    setTimeout(function () { self.handleAuthenticationResponse(window.location.hash); }, 0);
-                }
+            var isCallback = this.isCallback(window.location.hash);
+            if (isCallback) {
+                var self = this;
+                setTimeout(function () { self.handleAuthenticationResponse(window.location.hash); }, 0);
             }
         }
         Object.defineProperty(UserAgentApplication.prototype, "cacheLocation", {
@@ -1762,7 +1816,7 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             */
             if (this._loginInProgress) {
                 if (this._tokenReceivedCallback) {
-                    this._tokenReceivedCallback("Login is in progress", null, null, Constants_1.Constants.idToken);
+                    this._tokenReceivedCallback("Login is in progress", null, null, Constants_2.Constants.idToken);
                     return;
                 }
             }
@@ -1770,7 +1824,7 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 var isValidScope = this.validateInputScope(scopes);
                 if (isValidScope && !Utils_10.Utils.isEmpty(isValidScope)) {
                     if (this._tokenReceivedCallback) {
-                        this._tokenReceivedCallback(isValidScope, null, null, Constants_1.Constants.idToken);
+                        this._tokenReceivedCallback(isValidScope, null, null, Constants_2.Constants.idToken);
                         return;
                     }
                 }
@@ -1782,18 +1836,19 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 if (extraQueryParameters) {
                     authenticationRequest.extraQueryParameters = extraQueryParameters;
                 }
-                _this._cacheStorage.setItem(Constants_1.Constants.loginRequest, window.location.href);
-                _this._cacheStorage.setItem(Constants_1.Constants.loginError, "");
-                _this._cacheStorage.setItem(Constants_1.Constants.stateLogin, authenticationRequest.state);
-                _this._cacheStorage.setItem(Constants_1.Constants.nonceIdToken, authenticationRequest.nonce);
-                _this._cacheStorage.setItem(Constants_1.Constants.error, "");
-                _this._cacheStorage.setItem(Constants_1.Constants.errorDescription, "");
-                var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+                _this._cacheStorage.setItem(Constants_2.Constants.loginRequest, window.location.href);
+                _this._cacheStorage.setItem(Constants_2.Constants.loginError, "");
+                _this._cacheStorage.setItem(Constants_2.Constants.stateLogin, authenticationRequest.state);
+                _this._cacheStorage.setItem(Constants_2.Constants.nonceIdToken, authenticationRequest.nonce);
+                _this._cacheStorage.setItem(Constants_2.Constants.msalError, "");
+                _this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, "");
+                var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
                 if (Utils_10.Utils.isEmpty(_this._cacheStorage.getItem(authorityKey))) {
                     _this._cacheStorage.setItem(authorityKey, _this.authority);
                 }
                 var urlNavigate = authenticationRequest.createNavigateUrl(scopes) + "&prompt=select_account" + "&response_mode=fragment";
                 _this._loginInProgress = true;
+                _this._requestType = Constants_2.Constants.login;
                 _this.promptUser(urlNavigate);
             });
         };
@@ -1813,17 +1868,21 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             return new Promise(function (resolve, reject) {
                 _this._interactionMode = _this._interactionModes.popUp;
                 if (_this._loginInProgress) {
-                    reject(Constants_2.ErrorCodes.loginProgressError + ':' + Constants_2.ErrorDescription.loginProgressError);
+                    reject(Constants_3.ErrorCodes.loginProgressError + ':' + Constants_3.ErrorDescription.loginProgressError);
                     return;
                 }
                 if (scopes) {
                     var isValidScope = _this.validateInputScope(scopes);
                     if (isValidScope && !Utils_10.Utils.isEmpty(isValidScope)) {
-                        reject(Constants_2.ErrorCodes.inputScopesError + ':' + Constants_2.ErrorDescription.inputScopesError);
+                        reject(Constants_3.ErrorCodes.inputScopesError + ':' + Constants_3.ErrorDescription.inputScopesError);
                         return;
                     }
                     scopes = _this.filterScopes(scopes);
                 }
+                else {
+                    scopes = [_this.clientId];
+                }
+                var scope = scopes.join(" ").toLowerCase();
                 var popUpWindow = _this.openWindow('about:blank', '_blank', 1, _this, resolve, reject);
                 if (!popUpWindow) {
                     return;
@@ -1833,27 +1892,29 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                     if (extraQueryParameters) {
                         authenticationRequest.extraQueryParameters = extraQueryParameters;
                     }
-                    _this._cacheStorage.setItem(Constants_1.Constants.loginRequest, window.location.href);
-                    _this._cacheStorage.setItem(Constants_1.Constants.loginError, "");
-                    _this._cacheStorage.setItem(Constants_1.Constants.stateLogin, authenticationRequest.state);
-                    _this._cacheStorage.setItem(Constants_1.Constants.nonceIdToken, authenticationRequest.nonce);
-                    _this._cacheStorage.setItem(Constants_1.Constants.error, "");
-                    _this._cacheStorage.setItem(Constants_1.Constants.errorDescription, "");
-                    var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+                    _this._cacheStorage.setItem(Constants_2.Constants.loginRequest, window.location.href);
+                    _this._cacheStorage.setItem(Constants_2.Constants.loginError, "");
+                    _this._cacheStorage.setItem(Constants_2.Constants.nonceIdToken, authenticationRequest.nonce);
+                    _this._cacheStorage.setItem(Constants_2.Constants.msalError, "");
+                    _this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, "");
+                    var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
                     if (Utils_10.Utils.isEmpty(_this._cacheStorage.getItem(authorityKey))) {
                         _this._cacheStorage.setItem(authorityKey, _this.authority);
                     }
                     var urlNavigate = authenticationRequest.createNavigateUrl(scopes) + "&prompt=select_account" + "&response_mode=fragment";
+                    _this._renewStates.push(authenticationRequest.state);
+                    _this.registerCallback(authenticationRequest.state, scope, resolve, reject);
+                    _this._requestType = Constants_2.Constants.login;
                     _this._loginInProgress = true;
                     if (popUpWindow) {
                         popUpWindow.location.href = urlNavigate;
                     }
                 }, function () {
-                    _this._requestContext.logger.info(Constants_2.ErrorCodes.endpointResolutionError + ':' + Constants_2.ErrorDescription.endpointResolutionError);
-                    _this._cacheStorage.setItem(Constants_1.Constants.error, Constants_2.ErrorCodes.endpointResolutionError);
-                    _this._cacheStorage.setItem(Constants_1.Constants.errorDescription, Constants_2.ErrorDescription.endpointResolutionError);
+                    _this._requestContext.logger.info(Constants_3.ErrorCodes.endpointResolutionError + ':' + Constants_3.ErrorDescription.endpointResolutionError);
+                    _this._cacheStorage.setItem(Constants_2.Constants.msalError, Constants_3.ErrorCodes.endpointResolutionError);
+                    _this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, Constants_3.ErrorDescription.endpointResolutionError);
                     if (reject) {
-                        reject(Constants_2.ErrorCodes.endpointResolutionError + ':' + Constants_2.ErrorDescription.endpointResolutionError);
+                        reject(Constants_3.ErrorCodes.endpointResolutionError + ':' + Constants_3.ErrorDescription.endpointResolutionError);
                     }
                     if (popUpWindow) {
                         popUpWindow.close();
@@ -1884,32 +1945,35 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
         */
         UserAgentApplication.prototype.openWindow = function (urlNavigate, title, interval, instance, resolve, reject) {
             var _this = this;
-            var popupWindow = this.openPopup(urlNavigate, title, Constants_1.Constants.popUpWidth, Constants_1.Constants.popUpHeight);
+            var popupWindow = this.openPopup(urlNavigate, title, Constants_2.Constants.popUpWidth, Constants_2.Constants.popUpHeight);
             if (popupWindow == null) {
                 instance._loginInProgress = false;
                 instance._acquireTokenInProgress = false;
-                this._requestContext.logger.info(Constants_2.ErrorCodes.popUpWindowError + ':' + Constants_2.ErrorDescription.popUpWindowError);
-                this._cacheStorage.setItem(Constants_1.Constants.error, Constants_2.ErrorCodes.popUpWindowError);
-                this._cacheStorage.setItem(Constants_1.Constants.errorDescription, Constants_2.ErrorDescription.popUpWindowError);
+                this._requestContext.logger.info(Constants_3.ErrorCodes.popUpWindowError + ':' + Constants_3.ErrorDescription.popUpWindowError);
+                this._cacheStorage.setItem(Constants_2.Constants.msalError, Constants_3.ErrorCodes.popUpWindowError);
+                this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, Constants_3.ErrorDescription.popUpWindowError);
                 if (reject) {
-                    reject(Constants_2.ErrorCodes.popUpWindowError + ':' + Constants_2.ErrorDescription.popUpWindowError);
+                    reject(Constants_3.ErrorCodes.popUpWindowError + ':' + Constants_3.ErrorDescription.popUpWindowError);
                 }
                 return null;
             }
+            this._openedWindows.push(popupWindow);
             var pollTimer = window.setInterval(function () {
-                if (!popupWindow || popupWindow.closed || popupWindow.closed === undefined) {
+                if (popupWindow && popupWindow.closed && instance._loginInProgress) {
                     instance._loginInProgress = false;
                     instance._acquireTokenInProgress = false;
+                    if (reject) {
+                        reject(Constants_3.ErrorCodes.userCancelledError + ':' + Constants_3.ErrorDescription.userCancelledError);
+                    }
                     window.clearInterval(pollTimer);
                 }
                 try {
-                    if (popupWindow.location.href.indexOf(_this._redirectUri) !== -1) {
-                        _this.handleAuthenticationResponse(popupWindow.location.hash, resolve, reject);
+                    var popUpWindowLocation = popupWindow.location;
+                    if (popUpWindowLocation.href.indexOf(_this._redirectUri) !== -1) {
                         window.clearInterval(pollTimer);
                         instance._loginInProgress = false;
                         instance._acquireTokenInProgress = false;
                         _this._requestContext.logger.info("Closing popup window");
-                        popupWindow.close();
                     }
                 }
                 catch (e) {
@@ -1939,12 +2003,12 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
         */
         UserAgentApplication.prototype.clearCache = function () {
             this._renewStates = [];
-            var accessTokenItems = this._cacheStorage.getAllAccessTokens(Constants_1.Constants.clientId, Constants_1.Constants.authority);
+            var accessTokenItems = this._cacheStorage.getAllAccessTokens(Constants_2.Constants.clientId, Constants_2.Constants.authority);
             for (var i = 0; i < accessTokenItems.length; i++) {
                 this._cacheStorage.removeItem(JSON.stringify(accessTokenItems[i].key));
             }
-            this._cacheStorage.removeAcquireTokenEntries(Constants_1.Constants.acquireTokenUser, Constants_1.Constants.renewStatus);
-            this._cacheStorage.removeAcquireTokenEntries(Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter, Constants_1.Constants.renewStatus);
+            this._cacheStorage.removeAcquireTokenEntries(Constants_2.Constants.acquireTokenUser, Constants_2.Constants.renewStatus);
+            this._cacheStorage.removeAcquireTokenEntries(Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter, Constants_2.Constants.renewStatus);
             this._cacheStorage.resetCacheItems();
         };
         /**
@@ -2153,7 +2217,7 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
         */
         UserAgentApplication.prototype.getAllUsers = function () {
             var users = [];
-            var accessTokenCacheItems = this._cacheStorage.getAllAccessTokens(Constants_1.Constants.clientId, Constants_1.Constants.authority);
+            var accessTokenCacheItems = this._cacheStorage.getAllAccessTokens(Constants_2.Constants.clientId, Constants_2.Constants.authority);
             for (var i = 0; i < accessTokenCacheItems.length; i++) {
                 var idToken = new IdToken_1.IdToken(accessTokenCacheItems[i].value.idToken);
                 var clientInfo = new ClientInfo_1.ClientInfo(accessTokenCacheItems[i].value.clientInfo);
@@ -2250,21 +2314,21 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             var isValidScope = this.validateInputScope(scopes);
             if (isValidScope && !Utils_10.Utils.isEmpty(isValidScope)) {
                 if (this._tokenReceivedCallback) {
-                    this._tokenReceivedCallback(isValidScope, null, null, Constants_1.Constants.accessToken);
+                    this._tokenReceivedCallback(isValidScope, null, null, Constants_2.Constants.accessToken);
                     return;
                 }
             }
             if (scopes) {
                 scopes = this.filterScopes(scopes);
             }
-            var userObject = user ? user : this._user;
+            var userObject = user ? user : this.getUser();
             if (this._acquireTokenInProgress) {
                 return;
             }
             var scope = scopes.join(" ").toLowerCase();
             if (!userObject) {
                 if (this._tokenReceivedCallback) {
-                    this._tokenReceivedCallback(Constants_2.ErrorDescription.userLoginError, null, Constants_2.ErrorCodes.userLoginError, Constants_1.Constants.accessToken);
+                    this._tokenReceivedCallback(Constants_3.ErrorDescription.userLoginError, null, Constants_3.ErrorCodes.userLoginError, Constants_2.Constants.accessToken);
                     return;
                 }
             }
@@ -2278,12 +2342,12 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 else {
                     authenticationRequest = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(acquireTokenAuthority, _this.clientId, scopes, ResponseTypes.id_token_token, _this._redirectUri);
                 }
-                _this._cacheStorage.setItem(Constants_1.Constants.nonceIdToken, authenticationRequest.nonce);
-                var acquireTokenUserKey = Constants_1.Constants.acquireTokenUser + Constants_1.Constants.resourceDelimeter + userObject.userIdentifier + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+                _this._cacheStorage.setItem(Constants_2.Constants.nonceIdToken, authenticationRequest.nonce);
+                var acquireTokenUserKey = Constants_2.Constants.acquireTokenUser + Constants_2.Constants.resourceDelimeter + userObject.userIdentifier + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
                 if (Utils_10.Utils.isEmpty(_this._cacheStorage.getItem(acquireTokenUserKey))) {
                     _this._cacheStorage.setItem(acquireTokenUserKey, JSON.stringify(userObject));
                 }
-                var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+                var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
                 if (Utils_10.Utils.isEmpty(_this._cacheStorage.getItem(authorityKey))) {
                     _this._cacheStorage.setItem(authorityKey, acquireTokenAuthority.CanonicalAuthority);
                 }
@@ -2293,7 +2357,8 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 var urlNavigate = authenticationRequest.createNavigateUrl(scopes) + "&prompt=select_account" + "&response_mode=fragment";
                 urlNavigate = _this.addHintParameters(urlNavigate, userObject);
                 if (urlNavigate) {
-                    _this._cacheStorage.setItem(Constants_1.Constants.stateAcquireToken, authenticationRequest.state);
+                    _this._cacheStorage.setItem(Constants_2.Constants.stateAcquireToken, authenticationRequest.state);
+                    _this._requestType = Constants_2.Constants.renewToken;
                     window.location.replace(urlNavigate);
                 }
             });
@@ -2304,19 +2369,19 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 _this._interactionMode = _this._interactionModes.popUp;
                 var isValidScope = _this.validateInputScope(scopes);
                 if (isValidScope && !Utils_10.Utils.isEmpty(isValidScope)) {
-                    reject(Constants_2.ErrorCodes.inputScopesError + ':' + isValidScope);
+                    reject(Constants_3.ErrorCodes.inputScopesError + ':' + isValidScope);
                 }
                 if (scopes) {
                     scopes = _this.filterScopes(scopes);
                 }
-                var userObject = user ? user : _this._user;
+                var userObject = user ? user : _this.getUser();
                 if (_this._acquireTokenInProgress) {
-                    reject(Constants_2.ErrorCodes.acquireTokenProgressError + ':' + Constants_2.ErrorDescription.acquireTokenProgressError);
+                    reject(Constants_3.ErrorCodes.acquireTokenProgressError + ':' + Constants_3.ErrorDescription.acquireTokenProgressError);
                     return;
                 }
                 var scope = scopes.join(" ").toLowerCase();
                 if (!userObject) {
-                    reject(Constants_2.ErrorCodes.userLoginError + ':' + Constants_2.ErrorDescription.userLoginError);
+                    reject(Constants_3.ErrorCodes.userLoginError + ':' + Constants_3.ErrorDescription.userLoginError);
                     return;
                 }
                 _this._acquireTokenInProgress = true;
@@ -2328,18 +2393,23 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 }
                 acquireTokenAuthority.ResolveEndpointsAsync().then(function () {
                     if (Utils_10.Utils.compareObjects(userObject, _this._user)) {
-                        authenticationRequest = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(acquireTokenAuthority, _this.clientId, scopes, ResponseTypes.token, _this._redirectUri);
+                        if (scopes.indexOf(_this.clientId) > -1) {
+                            authenticationRequest = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(acquireTokenAuthority, _this.clientId, scopes, ResponseTypes.id_token, _this._redirectUri);
+                        }
+                        else {
+                            authenticationRequest = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(acquireTokenAuthority, _this.clientId, scopes, ResponseTypes.token, _this._redirectUri);
+                        }
                     }
                     else {
                         authenticationRequest = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(acquireTokenAuthority, _this.clientId, scopes, ResponseTypes.id_token_token, _this._redirectUri);
                     }
-                    _this._cacheStorage.setItem(Constants_1.Constants.nonceIdToken, authenticationRequest.nonce);
+                    _this._cacheStorage.setItem(Constants_2.Constants.nonceIdToken, authenticationRequest.nonce);
                     authenticationRequest.state = authenticationRequest.state;
-                    var acquireTokenUserKey = Constants_1.Constants.acquireTokenUser + Constants_1.Constants.resourceDelimeter + userObject.userIdentifier + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+                    var acquireTokenUserKey = Constants_2.Constants.acquireTokenUser + Constants_2.Constants.resourceDelimeter + userObject.userIdentifier + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
                     if (Utils_10.Utils.isEmpty(_this._cacheStorage.getItem(acquireTokenUserKey))) {
                         _this._cacheStorage.setItem(acquireTokenUserKey, JSON.stringify(userObject));
                     }
-                    var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+                    var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
                     if (Utils_10.Utils.isEmpty(_this._cacheStorage.getItem(authorityKey))) {
                         _this._cacheStorage.setItem(authorityKey, acquireTokenAuthority.CanonicalAuthority);
                     }
@@ -2350,15 +2420,16 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                     urlNavigate = _this.addHintParameters(urlNavigate, userObject);
                     _this._renewStates.push(authenticationRequest.state);
                     _this.registerCallback(authenticationRequest.state, scope, resolve, reject);
+                    _this._requestType = Constants_2.Constants.renewToken;
                     if (popUpWindow) {
                         popUpWindow.location.href = urlNavigate;
                     }
                 }, function () {
-                    _this._requestContext.logger.info(Constants_2.ErrorCodes.endpointResolutionError + ':' + Constants_2.ErrorDescription.endpointResolutionError);
-                    _this._cacheStorage.setItem(Constants_1.Constants.error, Constants_2.ErrorCodes.endpointResolutionError);
-                    _this._cacheStorage.setItem(Constants_1.Constants.errorDescription, Constants_2.ErrorDescription.endpointResolutionError);
+                    _this._requestContext.logger.info(Constants_3.ErrorCodes.endpointResolutionError + ':' + Constants_3.ErrorDescription.endpointResolutionError);
+                    _this._cacheStorage.setItem(Constants_2.Constants.msalError, Constants_3.ErrorCodes.endpointResolutionError);
+                    _this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, Constants_3.ErrorDescription.endpointResolutionError);
                     if (reject) {
-                        reject(Constants_2.ErrorCodes.endpointResolutionError + ':' + Constants_2.ErrorDescription.endpointResolutionError);
+                        reject(Constants_3.ErrorCodes.endpointResolutionError + ':' + Constants_3.ErrorDescription.endpointResolutionError);
                     }
                     if (popUpWindow)
                         popUpWindow.close();
@@ -2383,22 +2454,27 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             return new Promise(function (resolve, reject) {
                 var isValidScope = _this.validateInputScope(scopes);
                 if (isValidScope && !Utils_10.Utils.isEmpty(isValidScope)) {
-                    reject(Constants_2.ErrorCodes.inputScopesError + ':' + isValidScope);
+                    reject(Constants_3.ErrorCodes.inputScopesError + ':' + isValidScope);
                 }
                 else {
                     if (scopes) {
                         scopes = _this.filterScopes(scopes);
                     }
-                    var scope = scopes.join(" ").toLowerCase();
-                    var userObject_1 = user ? user : _this._user;
+                    var scope_1 = scopes.join(" ").toLowerCase();
+                    var userObject_1 = user ? user : _this.getUser();
                     if (!userObject_1) {
-                        reject(Constants_2.ErrorCodes.userLoginError + ':' + Constants_2.ErrorDescription.userLoginError);
+                        reject(Constants_3.ErrorCodes.userLoginError + ':' + Constants_3.ErrorDescription.userLoginError);
                         return;
                     }
                     var authenticationRequest_1;
                     var newAuthority = authority ? AuthorityFactory_1.AuthorityFactory.CreateInstance(authority, _this.validateAuthority) : _this.authorityInstance;
                     if (Utils_10.Utils.compareObjects(userObject_1, _this._user)) {
-                        authenticationRequest_1 = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(newAuthority, _this.clientId, scopes, ResponseTypes.token, _this._redirectUri);
+                        if (scopes.indexOf(_this.clientId) > -1) {
+                            authenticationRequest_1 = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(newAuthority, _this.clientId, scopes, ResponseTypes.id_token, _this._redirectUri);
+                        }
+                        else {
+                            authenticationRequest_1 = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(newAuthority, _this.clientId, scopes, ResponseTypes.token, _this._redirectUri);
+                        }
                     }
                     else {
                         authenticationRequest_1 = new AuthenticationRequestParameters_1.AuthenticationRequestParameters(newAuthority, _this.clientId, scopes, ResponseTypes.id_token_token, _this._redirectUri);
@@ -2406,7 +2482,7 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                     var cacheResult = _this.getCachedToken(authenticationRequest_1, userObject_1);
                     if (cacheResult) {
                         if (cacheResult.token) {
-                            _this._requestContext.logger.info('Token is already in cache for scope:' + scope);
+                            _this._requestContext.logger.info('Token is already in cache for scope:' + scope_1);
                             resolve(cacheResult.token);
                             return;
                         }
@@ -2416,24 +2492,27 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                             return;
                         }
                     }
-                    // refresh attept with iframe
-                    //Already renewing for this scope, callback when we get the token.
-                    if (_this._activeRenewals[scope]) {
-                        //Active renewals contains the state for each renewal.
-                        _this.registerCallback(_this._activeRenewals[scope], scope, resolve, reject);
-                    }
+                    _this._requestType = Constants_2.Constants.renewToken;
                     // cache miss
                     return _this.authorityInstance.ResolveEndpointsAsync()
                         .then(function () {
-                        if (scopes && scopes.indexOf(_this.clientId) > -1 && scopes.length === 1) {
-                            // App uses idToken to send to api endpoints
-                            // Default scope is tracked as clientId to store this token
-                            _this._requestContext.logger.verbose("renewing idToken");
-                            _this.renewIdToken(scopes, resolve, reject, userObject_1, authenticationRequest_1, extraQueryParameters);
+                        // refresh attept with iframe
+                        //Already renewing for this scope, callback when we get the token.
+                        if (_this._activeRenewals[scope_1]) {
+                            //Active renewals contains the state for each renewal.
+                            _this.registerCallback(_this._activeRenewals[scope_1], scope_1, resolve, reject);
                         }
                         else {
-                            _this._requestContext.logger.verbose("renewing accesstoken");
-                            _this.renewToken(scopes, resolve, reject, userObject_1, authenticationRequest_1, extraQueryParameters);
+                            if (scopes && scopes.indexOf(_this.clientId) > -1 && scopes.length === 1) {
+                                // App uses idToken to send to api endpoints
+                                // Default scope is tracked as clientId to store this token
+                                _this._requestContext.logger.verbose("renewing idToken");
+                                _this.renewIdToken(scopes, resolve, reject, userObject_1, authenticationRequest_1, extraQueryParameters);
+                            }
+                            else {
+                                _this._requestContext.logger.verbose("renewing accesstoken");
+                                _this.renewToken(scopes, resolve, reject, userObject_1, authenticationRequest_1, extraQueryParameters);
+                            }
                         }
                     });
                 }
@@ -2449,18 +2528,18 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             var _this = this;
             //set iframe session to pending
             this._requestContext.logger.verbose('Set loading state to pending for: ' + scope);
-            this._cacheStorage.setItem(Constants_1.Constants.renewStatus + scope, Constants_1.Constants.tokenRenewStatusInProgress);
+            this._cacheStorage.setItem(Constants_2.Constants.renewStatus + scope, Constants_2.Constants.tokenRenewStatusInProgress);
             this.loadFrame(urlNavigate, frameName);
             setTimeout(function () {
-                if (_this._cacheStorage.getItem(Constants_1.Constants.renewStatus + scope) === Constants_1.Constants.tokenRenewStatusInProgress) {
+                if (_this._cacheStorage.getItem(Constants_2.Constants.renewStatus + scope) === Constants_2.Constants.tokenRenewStatusInProgress) {
                     // fail the iframe session if it's in pending state
-                    _this._requestContext.logger.verbose('Loading frame has timed out after: ' + (Constants_1.Constants.loadFrameTimeout / 1000) + ' seconds for scope ' + scope);
+                    _this._requestContext.logger.verbose('Loading frame has timed out after: ' + (Constants_2.Constants.loadFrameTimeout / 1000) + ' seconds for scope ' + scope);
                     var expectedState = _this._activeRenewals[scope];
                     if (expectedState && window.callBackMappedToRenewStates[expectedState])
-                        window.callBackMappedToRenewStates[expectedState]("Token renewal operation failed due to timeout", null, null, Constants_1.Constants.accessToken);
-                    _this._cacheStorage.setItem(Constants_1.Constants.renewStatus + scope, Constants_1.Constants.tokenRenewStatusCancelled);
+                        window.callBackMappedToRenewStates[expectedState]("Token renewal operation failed due to timeout", null, null, Constants_2.Constants.accessToken);
+                    _this._cacheStorage.setItem(Constants_2.Constants.renewStatus + scope, Constants_2.Constants.tokenRenewStatusCancelled);
                 }
-            }, Constants_1.Constants.loadFrameTimeout);
+            }, Constants_2.Constants.loadFrameTimeout);
         };
         /**
         * Loads iframe with authorization endpoint URL
@@ -2523,16 +2602,16 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             if (extraQueryParameters) {
                 authenticationRequest.extraQueryParameters = extraQueryParameters;
             }
-            var acquireTokenUserKey = Constants_1.Constants.acquireTokenUser + Constants_1.Constants.resourceDelimeter + user.userIdentifier + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+            var acquireTokenUserKey = Constants_2.Constants.acquireTokenUser + Constants_2.Constants.resourceDelimeter + user.userIdentifier + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
             if (Utils_10.Utils.isEmpty(this._cacheStorage.getItem(acquireTokenUserKey))) {
                 this._cacheStorage.setItem(acquireTokenUserKey, JSON.stringify(user));
             }
-            var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+            var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
             if (Utils_10.Utils.isEmpty(this._cacheStorage.getItem(authorityKey))) {
                 this._cacheStorage.setItem(authorityKey, authenticationRequest.authority);
             }
             // renew happens in iframe, so it keeps javascript context
-            this._cacheStorage.setItem(Constants_1.Constants.nonceIdToken, authenticationRequest.nonce);
+            this._cacheStorage.setItem(Constants_2.Constants.nonceIdToken, authenticationRequest.nonce);
             this._requestContext.logger.verbose('Renew token Expected state: ' + authenticationRequest.state);
             var urlNavigate = authenticationRequest.createNavigateUrl(scopes) + "&prompt=none";
             urlNavigate = this.addHintParameters(urlNavigate, user);
@@ -2554,15 +2633,15 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             if (extraQueryParameters) {
                 authenticationRequest.extraQueryParameters = extraQueryParameters;
             }
-            var acquireTokenUserKey = Constants_1.Constants.acquireTokenUser + Constants_1.Constants.resourceDelimeter + user.userIdentifier + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+            var acquireTokenUserKey = Constants_2.Constants.acquireTokenUser + Constants_2.Constants.resourceDelimeter + user.userIdentifier + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
             if (Utils_10.Utils.isEmpty(this._cacheStorage.getItem(acquireTokenUserKey))) {
                 this._cacheStorage.setItem(acquireTokenUserKey, JSON.stringify(user));
             }
-            var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + authenticationRequest.state;
+            var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + authenticationRequest.state;
             if (Utils_10.Utils.isEmpty(this._cacheStorage.getItem(authorityKey))) {
                 this._cacheStorage.setItem(authorityKey, authenticationRequest.authority);
             }
-            this._cacheStorage.setItem(Constants_1.Constants.nonceIdToken, authenticationRequest.nonce);
+            this._cacheStorage.setItem(Constants_2.Constants.nonceIdToken, authenticationRequest.nonce);
             this._requestContext.logger.verbose('Renew Idtoken Expected state: ' + authenticationRequest.state);
             var urlNavigate = authenticationRequest.createNavigateUrl(scopes) + "&prompt=none";
             urlNavigate = this.addHintParameters(urlNavigate, user);
@@ -2570,7 +2649,7 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             this.registerCallback(authenticationRequest.state, this.clientId, resolve, reject);
             this._requestContext.logger.infoPii('Navigate to:' + urlNavigate);
             frameHandle.src = "about:blank";
-            this.loadFrameTimeout(urlNavigate, "adalIdTokenFrame", this.clientId);
+            this.loadFrameTimeout(urlNavigate, "msalIdTokenFrame", this.clientId);
         };
         /**
          * Returns the signed in user (received from a user object created at the time of login) or null.
@@ -2581,8 +2660,8 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 return this._user;
             }
             // frame is used to get idToken
-            var rawIdToken = this._cacheStorage.getItem(Constants_1.Constants.idTokenKey);
-            var rawClientInfo = this._cacheStorage.getItem(Constants_1.Constants.clientInfo);
+            var rawIdToken = this._cacheStorage.getItem(Constants_2.Constants.idTokenKey);
+            var rawClientInfo = this._cacheStorage.getItem(Constants_2.Constants.msalClientInfo);
             if (!Utils_10.Utils.isEmpty(rawIdToken) && !Utils_10.Utils.isEmpty(rawClientInfo)) {
                 var idToken = new IdToken_1.IdToken(rawIdToken);
                 var clientInfo = new ClientInfo_1.ClientInfo(rawClientInfo);
@@ -2600,54 +2679,57 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
         * @param {Function} reject - The reject function of the promise object.
         * @hidden
         */
-        UserAgentApplication.prototype.handleAuthenticationResponse = function (hash, resolve, reject) {
+        UserAgentApplication.prototype.handleAuthenticationResponse = function (hash) {
             if (hash == null) {
                 hash = window.location.hash;
             }
-            if (this.isCallback(hash)) {
-                var requestInfo = this.getRequestInfo(hash);
-                this._requestContext.logger.info("Returned from redirect url");
-                this.saveTokenFromHash(requestInfo);
+            var self = null;
+            if (window.opener && window.opener.msal) {
+                self = window.opener.msal;
+            }
+            else if (window.parent && window.parent.msal) {
+                self = window.parent.msal;
+            }
+            if (self.isCallback(hash)) {
+                var requestInfo = self.getRequestInfo(hash);
+                self._requestContext.logger.info("Returned from redirect url");
+                self.saveTokenFromHash(requestInfo);
                 var token = null, tokenReceivedCallback = null, tokenType = void 0;
-                if ((requestInfo.requestType === Constants_1.Constants.renewToken) && window.parent) {
-                    if (window.parent !== window)
-                        this._requestContext.logger.verbose("Window is in iframe, acquiring token silently");
+                if (window.parent !== window && window.parent.callBackMappedToRenewStates[requestInfo.stateResponse])
+                    tokenReceivedCallback = window.parent.callBackMappedToRenewStates[requestInfo.stateResponse];
+                else if (window.opener && window.opener.msal && window.opener.callBackMappedToRenewStates[requestInfo.stateResponse])
+                    tokenReceivedCallback = window.opener.callBackMappedToRenewStates[requestInfo.stateResponse];
+                else
+                    tokenReceivedCallback = self._tokenReceivedCallback;
+                if ((requestInfo.requestType === Constants_2.Constants.renewToken) && window.parent) {
+                    if (self.isInIframe())
+                        self._requestContext.logger.verbose("Window is in iframe, acquiring token silently");
                     else
-                        this._requestContext.logger.verbose("acquiring token interactive in progress");
-                    if (window.parent.callBackMappedToRenewStates[requestInfo.stateResponse])
-                        tokenReceivedCallback = window.parent.callBackMappedToRenewStates[requestInfo.stateResponse];
-                    else
-                        tokenReceivedCallback = this._tokenReceivedCallback;
-                    token = requestInfo.parameters[Constants_1.Constants.accessToken] || requestInfo.parameters[Constants_1.Constants.idToken];
-                    tokenType = Constants_1.Constants.accessToken;
+                        self._requestContext.logger.verbose("acquiring token interactive in progress");
+                    token = requestInfo.parameters[Constants_2.Constants.accessToken] || requestInfo.parameters[Constants_2.Constants.idToken];
+                    tokenType = Constants_2.Constants.accessToken;
                 }
-                else if (requestInfo.requestType === Constants_1.Constants.login) {
-                    tokenReceivedCallback = this._tokenReceivedCallback;
-                    token = requestInfo.parameters[Constants_1.Constants.idToken];
-                    tokenType = Constants_1.Constants.idToken;
+                else if (requestInfo.requestType === Constants_2.Constants.login) {
+                    token = requestInfo.parameters[Constants_2.Constants.idToken];
+                    tokenType = Constants_2.Constants.idToken;
                 }
+                var errorDesc = requestInfo.parameters[Constants_2.Constants.errorDescription];
+                var error = requestInfo.parameters[Constants_2.Constants.error];
                 try {
-                    var errorDesc = requestInfo.parameters[Constants_1.Constants.errorDescription];
-                    var error = requestInfo.parameters[Constants_1.Constants.error];
-                    if (reject && resolve) {
-                        if (error || errorDesc) {
-                            reject(errorDesc + ":" + error);
-                        }
-                        else if (token) {
-                            resolve(token);
-                        }
-                    }
-                    else if (tokenReceivedCallback) {
+                    if (tokenReceivedCallback) {
                         tokenReceivedCallback(errorDesc, token, error, tokenType);
                     }
                 }
                 catch (err) {
-                    this._requestContext.logger.error('Error occurred in token received callback function: ' + err);
+                    self._requestContext.logger.error('Error occurred in token received callback function: ' + err);
                 }
-                if (this._interactionMode !== this._interactionModes.popUp) {
+                for (var i = 0; i < self._openedWindows.length; i++) {
+                    self._openedWindows[i].close();
+                }
+                if (self._interactionMode !== self._interactionModes.popUp) {
                     window.location.hash = "";
-                    if (this._navigateToLoginRequestUrl && window.location.href.replace("#", "") !== this._cacheStorage.getItem(Constants_1.Constants.loginRequest))
-                        window.location.href = this._cacheStorage.getItem(Constants_1.Constants.loginRequest);
+                    if (self._navigateToLoginRequestUrl && window.location.href.replace("#", "") !== self._cacheStorage.getItem(Constants_2.Constants.loginRequest))
+                        window.location.href = self._cacheStorage.getItem(Constants_2.Constants.loginRequest);
                 }
             }
         };
@@ -2678,13 +2760,13 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                     }
                 }
                 var accessTokenKey = new AccessTokenKey_1.AccessTokenKey(authority, this.clientId, scope, clientObj.uid, clientObj.utid);
-                var accessTokenValue = new AccessTokenValue_1.AccessTokenValue(tokenResponse.parameters[Constants_1.Constants.accessToken], idToken.rawIdToken, Utils_10.Utils.expiresIn(tokenResponse.parameters[Constants_1.Constants.expiresIn]).toString(), clientInfo);
+                var accessTokenValue = new AccessTokenValue_1.AccessTokenValue(tokenResponse.parameters[Constants_2.Constants.accessToken], idToken.rawIdToken, Utils_10.Utils.expiresIn(tokenResponse.parameters[Constants_2.Constants.expiresIn]).toString(), clientInfo);
                 this._cacheStorage.setItem(JSON.stringify(accessTokenKey), JSON.stringify(accessTokenValue));
             }
             else {
                 scope = this.clientId;
                 var accessTokenKey = new AccessTokenKey_1.AccessTokenKey(authority, this.clientId, scope, clientObj.uid, clientObj.utid);
-                var accessTokenValue = new AccessTokenValue_1.AccessTokenValue(tokenResponse.parameters[Constants_1.Constants.idToken], tokenResponse.parameters[Constants_1.Constants.idToken], idToken.expiration, clientInfo);
+                var accessTokenValue = new AccessTokenValue_1.AccessTokenValue(tokenResponse.parameters[Constants_2.Constants.idToken], tokenResponse.parameters[Constants_2.Constants.idToken], idToken.expiration, clientInfo);
                 this._cacheStorage.setItem(JSON.stringify(accessTokenKey), JSON.stringify(accessTokenValue));
             }
         };
@@ -2695,8 +2777,8 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
         */
         UserAgentApplication.prototype.saveTokenFromHash = function (tokenResponse) {
             this._requestContext.logger.info('State status:' + tokenResponse.stateMatch + '; Request type:' + tokenResponse.requestType);
-            this._cacheStorage.setItem(Constants_1.Constants.error, "");
-            this._cacheStorage.setItem(Constants_1.Constants.errorDescription, "");
+            this._cacheStorage.setItem(Constants_2.Constants.msalError, "");
+            this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, "");
             var scope = '';
             if (tokenResponse.parameters.hasOwnProperty("scope")) {
                 scope = tokenResponse.parameters["scope"];
@@ -2705,15 +2787,15 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 scope = this.clientId;
             }
             // Record error
-            if (tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.errorDescription) || tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.error)) {
-                this._requestContext.logger.info('Error :' + tokenResponse.parameters[Constants_1.Constants.error] + '; Error description:' + tokenResponse.parameters[Constants_1.Constants.errorDescription]);
-                this._cacheStorage.setItem(Constants_1.Constants.error, tokenResponse.parameters["error"]);
-                this._cacheStorage.setItem(Constants_1.Constants.errorDescription, tokenResponse.parameters[Constants_1.Constants.errorDescription]);
-                if (tokenResponse.requestType === Constants_1.Constants.login) {
+            if (tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.errorDescription) || tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.error)) {
+                this._requestContext.logger.info('Error :' + tokenResponse.parameters[Constants_2.Constants.error] + '; Error description:' + tokenResponse.parameters[Constants_2.Constants.errorDescription]);
+                this._cacheStorage.setItem(Constants_2.Constants.msalError, tokenResponse.parameters["error"]);
+                this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, tokenResponse.parameters[Constants_2.Constants.errorDescription]);
+                if (tokenResponse.requestType === Constants_2.Constants.login) {
                     this._loginInProgress = false;
-                    this._cacheStorage.setItem(Constants_1.Constants.loginError, tokenResponse.parameters[Constants_1.Constants.errorDescription] + ':' + tokenResponse.parameters[Constants_1.Constants.error]);
+                    this._cacheStorage.setItem(Constants_2.Constants.loginError, tokenResponse.parameters[Constants_2.Constants.errorDescription] + ':' + tokenResponse.parameters[Constants_2.Constants.error]);
                 }
-                if (tokenResponse.requestType === Constants_1.Constants.renewToken) {
+                if (tokenResponse.requestType === Constants_2.Constants.renewToken) {
                     this._acquireTokenInProgress = false;
                 }
             }
@@ -2722,35 +2804,35 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                 if (tokenResponse.stateMatch) {
                     // record tokens to storage if exists
                     this._requestContext.logger.info("State is right");
-                    if (tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.sessionState))
-                        this._cacheStorage.setItem(Constants_1.Constants.sessionState, tokenResponse.parameters[Constants_1.Constants.sessionState]);
+                    if (tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.sessionState))
+                        this._cacheStorage.setItem(Constants_2.Constants.msalSessionState, tokenResponse.parameters[Constants_2.Constants.sessionState]);
                     var idToken;
                     var clientInfo = '';
-                    if (tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.accessToken)) {
+                    if (tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.accessToken)) {
                         this._requestContext.logger.info("Fragment has access token");
                         this._acquireTokenInProgress = false;
                         var user = void 0;
-                        if (tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.idToken)) {
-                            idToken = new IdToken_1.IdToken(tokenResponse.parameters[Constants_1.Constants.idToken]);
+                        if (tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.idToken)) {
+                            idToken = new IdToken_1.IdToken(tokenResponse.parameters[Constants_2.Constants.idToken]);
                         }
                         else {
-                            idToken = new IdToken_1.IdToken(this._cacheStorage.getItem(Constants_1.Constants.idTokenKey));
+                            idToken = new IdToken_1.IdToken(this._cacheStorage.getItem(Constants_2.Constants.idTokenKey));
                         }
-                        var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + tokenResponse.stateResponse;
+                        var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + tokenResponse.stateResponse;
                         var authority = void 0;
                         if (!Utils_10.Utils.isEmpty(this._cacheStorage.getItem(authorityKey))) {
                             authority = this._cacheStorage.getItem(authorityKey);
                             authority = Utils_10.Utils.replaceFirstPath(authority, idToken.tenantId);
                         }
-                        if (tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.clientInfo)) {
-                            clientInfo = tokenResponse.parameters[Constants_1.Constants.clientInfo];
+                        if (tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.clientInfo)) {
+                            clientInfo = tokenResponse.parameters[Constants_2.Constants.clientInfo];
                             user = User_1.User.createUser(idToken, new ClientInfo_1.ClientInfo(clientInfo), authority);
                         }
                         else {
                             this._requestContext.logger.warning("ClientInfo not received in the response from AAD");
                             user = User_1.User.createUser(idToken, new ClientInfo_1.ClientInfo(clientInfo), authority);
                         }
-                        var acquireTokenUserKey = Constants_1.Constants.acquireTokenUser + Constants_1.Constants.resourceDelimeter + user.userIdentifier + Constants_1.Constants.resourceDelimeter + tokenResponse.stateResponse;
+                        var acquireTokenUserKey = Constants_2.Constants.acquireTokenUser + Constants_2.Constants.resourceDelimeter + user.userIdentifier + Constants_2.Constants.resourceDelimeter + tokenResponse.stateResponse;
                         var acquireTokenUser = void 0;
                         if (!Utils_10.Utils.isEmpty(this._cacheStorage.getItem(acquireTokenUserKey))) {
                             acquireTokenUser = JSON.parse(this._cacheStorage.getItem(acquireTokenUserKey));
@@ -2763,18 +2845,18 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                             }
                         }
                     }
-                    if (tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.idToken)) {
+                    if (tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.idToken)) {
                         if (scope.indexOf(this.clientId) > -1) {
                             this._requestContext.logger.info("Fragment has id token");
                             this._loginInProgress = false;
-                            idToken = new IdToken_1.IdToken(tokenResponse.parameters[Constants_1.Constants.idToken]);
-                            if (tokenResponse.parameters.hasOwnProperty(Constants_1.Constants.clientInfo)) {
-                                clientInfo = tokenResponse.parameters[Constants_1.Constants.clientInfo];
+                            idToken = new IdToken_1.IdToken(tokenResponse.parameters[Constants_2.Constants.idToken]);
+                            if (tokenResponse.parameters.hasOwnProperty(Constants_2.Constants.clientInfo)) {
+                                clientInfo = tokenResponse.parameters[Constants_2.Constants.clientInfo];
                             }
                             else {
                                 this._requestContext.logger.warning("ClientInfo not received in the response from AAD");
                             }
-                            var authorityKey = Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter + tokenResponse.stateResponse;
+                            var authorityKey = Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter + tokenResponse.stateResponse;
                             var authority = void 0;
                             if (!Utils_10.Utils.isEmpty(this._cacheStorage.getItem(authorityKey))) {
                                 authority = this._cacheStorage.getItem(authorityKey);
@@ -2782,32 +2864,32 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                             }
                             this._user = User_1.User.createUser(idToken, new ClientInfo_1.ClientInfo(clientInfo), authority);
                             if (idToken && idToken.nonce) {
-                                if (idToken.nonce !== this._cacheStorage.getItem(Constants_1.Constants.nonceIdToken)) {
+                                if (idToken.nonce !== this._cacheStorage.getItem(Constants_2.Constants.nonceIdToken)) {
                                     this._user = null;
-                                    this._cacheStorage.setItem(Constants_1.Constants.loginError, 'Nonce Mismatch.Expected: ' + this._cacheStorage.getItem(Constants_1.Constants.nonceIdToken) + ',' + 'Actual: ' + idToken.nonce);
+                                    this._cacheStorage.setItem(Constants_2.Constants.loginError, 'Nonce Mismatch.Expected: ' + this._cacheStorage.getItem(Constants_2.Constants.nonceIdToken) + ',' + 'Actual: ' + idToken.nonce);
                                 }
                                 else {
-                                    this._cacheStorage.setItem(Constants_1.Constants.idTokenKey, tokenResponse.parameters[Constants_1.Constants.idToken]);
-                                    this._cacheStorage.setItem(Constants_1.Constants.clientInfo, clientInfo);
+                                    this._cacheStorage.setItem(Constants_2.Constants.idTokenKey, tokenResponse.parameters[Constants_2.Constants.idToken]);
+                                    this._cacheStorage.setItem(Constants_2.Constants.msalClientInfo, clientInfo);
                                     // Save idToken as access token for app itself
                                     this.saveAccessToken(authority, tokenResponse, this._user, clientInfo, idToken);
                                 }
                             }
                             else {
-                                this._cacheStorage.setItem(Constants_1.Constants.error, 'invalid idToken');
-                                this._cacheStorage.setItem(Constants_1.Constants.errorDescription, 'Invalid idToken. idToken: ' + tokenResponse.parameters[Constants_1.Constants.idToken]);
+                                this._cacheStorage.setItem(Constants_2.Constants.msalError, 'invalid idToken');
+                                this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, 'Invalid idToken. idToken: ' + tokenResponse.parameters[Constants_2.Constants.idToken]);
                             }
                         }
                     }
                 }
                 else {
-                    this._cacheStorage.setItem(Constants_1.Constants.error, 'Invalid_state');
-                    this._cacheStorage.setItem(Constants_1.Constants.errorDescription, 'Invalid_state. state: ' + tokenResponse.stateResponse);
+                    this._cacheStorage.setItem(Constants_2.Constants.msalError, 'Invalid_state');
+                    this._cacheStorage.setItem(Constants_2.Constants.msalErrorDescription, 'Invalid_state. state: ' + tokenResponse.stateResponse);
                 }
             }
-            this._cacheStorage.setItem(Constants_1.Constants.renewStatus + scope, Constants_1.Constants.tokenRenewStatusCompleted);
-            this._cacheStorage.removeAcquireTokenEntries(Constants_1.Constants.acquireTokenUser, Constants_1.Constants.renewStatus);
-            this._cacheStorage.removeAcquireTokenEntries(Constants_1.Constants.authority + Constants_1.Constants.resourceDelimeter, Constants_1.Constants.renewStatus);
+            this._cacheStorage.setItem(Constants_2.Constants.renewStatus + scope, Constants_2.Constants.tokenRenewStatusCompleted);
+            this._cacheStorage.removeAcquireTokenEntries(Constants_2.Constants.acquireTokenUser, Constants_2.Constants.renewStatus);
+            this._cacheStorage.removeAcquireTokenEntries(Constants_2.Constants.authority + Constants_2.Constants.resourceDelimeter, Constants_2.Constants.renewStatus);
         };
         ;
         /**
@@ -2819,10 +2901,10 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
         UserAgentApplication.prototype.isCallback = function (hash) {
             hash = this.getHash(hash);
             var parameters = Utils_10.Utils.deserialize(hash);
-            return (parameters.hasOwnProperty(Constants_1.Constants.errorDescription) ||
-                parameters.hasOwnProperty(Constants_1.Constants.error) ||
-                parameters.hasOwnProperty(Constants_1.Constants.accessToken) ||
-                parameters.hasOwnProperty(Constants_1.Constants.idToken));
+            return (parameters.hasOwnProperty(Constants_2.Constants.errorDescription) ||
+                parameters.hasOwnProperty(Constants_2.Constants.error) ||
+                parameters.hasOwnProperty(Constants_2.Constants.accessToken) ||
+                parameters.hasOwnProperty(Constants_2.Constants.idToken));
         };
         /**
         * Returns the anchor part(#) of the URL
@@ -2852,10 +2934,10 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             var tokenResponse = new RequestInfo_1.TokenResponse();
             if (parameters) {
                 tokenResponse.parameters = parameters;
-                if (parameters.hasOwnProperty(Constants_1.Constants.errorDescription) ||
-                    parameters.hasOwnProperty(Constants_1.Constants.error) ||
-                    parameters.hasOwnProperty(Constants_1.Constants.accessToken) ||
-                    parameters.hasOwnProperty(Constants_1.Constants.idToken)) {
+                if (parameters.hasOwnProperty(Constants_2.Constants.errorDescription) ||
+                    parameters.hasOwnProperty(Constants_2.Constants.error) ||
+                    parameters.hasOwnProperty(Constants_2.Constants.accessToken) ||
+                    parameters.hasOwnProperty(Constants_2.Constants.idToken)) {
                     tokenResponse.valid = true;
                     // which call
                     var stateResponse = void 0;
@@ -2866,23 +2948,27 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
                     tokenResponse.stateResponse = stateResponse;
                     // async calls can fire iframe and login request at the same time if developer does not use the API as expected
                     // incoming callback needs to be looked up to find the request type
-                    if (stateResponse === this._cacheStorage.getItem(Constants_1.Constants.stateLogin)) {
-                        tokenResponse.requestType = Constants_1.Constants.login;
+                    if (stateResponse === this._cacheStorage.getItem(Constants_2.Constants.stateLogin)) {
+                        tokenResponse.requestType = Constants_2.Constants.login;
                         tokenResponse.stateMatch = true;
                         return tokenResponse;
                     }
-                    else if (stateResponse === this._cacheStorage.getItem(Constants_1.Constants.stateAcquireToken)) {
-                        tokenResponse.requestType = Constants_1.Constants.renewToken;
+                    else if (stateResponse === this._cacheStorage.getItem(Constants_2.Constants.stateAcquireToken)) {
+                        tokenResponse.requestType = Constants_2.Constants.renewToken;
                         tokenResponse.stateMatch = true;
                         return tokenResponse;
                     }
                     // external api requests may have many renewtoken requests for different resource
-                    if (!tokenResponse.stateMatch && window.parent && window.parent.msal) {
-                        var clientApplication = window.parent.msal;
-                        var statesInParentContext = clientApplication._renewStates;
+                    if (!tokenResponse.stateMatch) {
+                        if (window.parent && window.parent !== window) {
+                            tokenResponse.requestType = Constants_2.Constants.renewToken;
+                        }
+                        else {
+                            tokenResponse.requestType = this._requestType;
+                        }
+                        var statesInParentContext = this._renewStates;
                         for (var i = 0; i < statesInParentContext.length; i++) {
                             if (statesInParentContext[i] === tokenResponse.stateResponse) {
-                                tokenResponse.requestType = Constants_1.Constants.renewToken;
                                 tokenResponse.stateMatch = true;
                                 break;
                             }
@@ -2909,6 +2995,17 @@ define("UserAgentApplication", ["require", "exports", "RequestContext", "User", 
             return "";
         };
         ;
+        /**
+         * Returns whether current window is in ifram for token renewal
+         * @ignore
+         * @hidden
+         */
+        UserAgentApplication.prototype.isInIframe = function () {
+            return window.parent !== window;
+        };
+        __decorate([
+            resolveTokenOnlyIfOutOfIframe
+        ], UserAgentApplication.prototype, "acquireTokenSilent", null);
         return UserAgentApplication;
     }());
     exports.UserAgentApplication = UserAgentApplication;

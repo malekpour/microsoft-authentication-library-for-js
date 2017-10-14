@@ -1,15 +1,15 @@
 import { IUri } from "./IUri";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare enum AuthorityType {
     Aad = 0,
     Adfs = 1,
     B2C = 2,
 }
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare abstract class Authority {
     protected constructor(authority: string, validateAuthority: boolean);
     readonly abstract AuthorityType: AuthorityType;

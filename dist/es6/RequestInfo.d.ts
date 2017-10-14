@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class TokenResponse {
     valid: boolean;
     parameters: Object;

@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = require("./Utils");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var AuthenticationRequestParameters = (function () {
     function AuthenticationRequestParameters(authority, clientId, scope, responseType, redirectUri) {
         this.authorityInstance = authority;

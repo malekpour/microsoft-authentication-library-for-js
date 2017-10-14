@@ -2,8 +2,8 @@ import { IUri } from "./IUri";
 import { User } from "./User";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class Utils {
   static compareObjects(u1: User, u2: User): boolean {
     if (!u1 || !u2)
@@ -230,7 +230,7 @@ export class Utils {
   }
 
   static getLibraryVersion(): string {
-    return "0.1.1";
+    return "0.1.2";
   }
 
   /**

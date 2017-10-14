@@ -3,8 +3,8 @@ import { AuthorityType } from "./Authority";
 import { Utils } from "./Utils";
 import { ErrorMessage } from "./ErrorMessage";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class B2cAuthority extends AadAuthority {
     constructor(authority, validateAuthority) {
         super(authority, validateAuthority);

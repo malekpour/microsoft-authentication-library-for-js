@@ -1,8 +1,8 @@
 import { Utils } from "./Utils";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class IdToken {
 
   rawIdToken: string;

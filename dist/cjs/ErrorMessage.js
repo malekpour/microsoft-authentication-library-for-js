@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var ErrorMessage = (function () {
     function ErrorMessage() {
     }

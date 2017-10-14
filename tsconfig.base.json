@@ -6,7 +6,13 @@
     "strict": true,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
-    "strictNullChecks": false
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    // "noImplicitReturns": true,
+    // "noUnusedLocals": true,
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules",

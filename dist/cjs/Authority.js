@@ -6,8 +6,8 @@ var XhrClient_1 = require("./XhrClient");
 //import { AadAuthority } from "./AadAuthority";
 //import { B2cAuthority } from "./B2cAuthority";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var AuthorityType;
 (function (AuthorityType) {
     AuthorityType[AuthorityType["Aad"] = 0] = "Aad";
@@ -15,8 +15,8 @@ var AuthorityType;
     AuthorityType[AuthorityType["B2C"] = 2] = "B2C";
 })(AuthorityType = exports.AuthorityType || (exports.AuthorityType = {}));
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var Authority = (function () {
     function Authority(authority, validateAuthority) {
         this.IsValidationEnabled = validateAuthority;

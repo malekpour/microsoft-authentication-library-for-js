@@ -39,5 +39,4 @@ export class AuthorityFactory {
         throw ErrorMessage.invalidAuthorityType;
     }
   }
-
 }

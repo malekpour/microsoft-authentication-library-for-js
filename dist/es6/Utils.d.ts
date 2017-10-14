@@ -1,8 +1,8 @@
 import { IUri } from "./IUri";
 import { User } from "./User";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class Utils {
     static compareObjects(u1: User, u2: User): boolean;
     static expiresIn(expires: string): number;

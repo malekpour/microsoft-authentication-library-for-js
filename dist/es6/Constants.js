@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class Constants {
     static get errorDescription() { return "error_description"; }
     static get error() { return "error"; }
@@ -13,6 +13,10 @@ export class Constants {
     static get accessToken() { return "access_token"; }
     static get expiresIn() { return "expires_in"; }
     static get sessionState() { return "session_state"; }
+    static get msalClientInfo() { return "msal.client.info"; }
+    static get msalError() { return "msal.error"; }
+    static get msalErrorDescription() { return "msal.error.description"; }
+    static get msalSessionState() { return "msal.session.state"; }
     static get tokenKeys() { return "msal.token.keys"; }
     static get accessTokenKey() { return "msal.access.token.key"; }
     static get expirationKey() { return "msal.expiration.key"; }
@@ -25,6 +29,7 @@ export class Constants {
     static get loginRequest() { return "msal.login.request"; }
     static get loginError() { return "msal.login.error"; }
     static get renewStatus() { return "msal.token.renew.status"; }
+    static get msal() { return "msal"; }
     static get resourceDelimeter() { return "|"; }
     static get loadFrameTimeout() {
         return this._loadFrameTimeout;
@@ -64,6 +69,7 @@ export class ErrorCodes {
     static get endpointResolutionError() { return "endpoints_resolution_error"; }
     static get popUpWindowError() { return "popup_window_error"; }
     static get userLoginError() { return "user_login_error"; }
+    static get userCancelledError() { return "user_cancelled"; }
 }
 /**
 * @hidden
@@ -75,5 +81,6 @@ export class ErrorDescription {
     static get endpointResolutionError() { return "Endpoints cannot be resolved"; }
     static get popUpWindowError() { return "Error opening popup window. This can happen if you are using IE or if popups are blocked in the browser."; }
     static get userLoginError() { return "User login is required"; }
+    static get userCancelledError() { return "User closed the popup window window and cancelled the flow"; }
 }
 //# sourceMappingURL=Constants.js.map

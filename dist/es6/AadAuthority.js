@@ -1,8 +1,8 @@
 import { Authority, AuthorityType } from "./Authority";
 import { XhrClient } from "./XhrClient";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AadAuthority extends Authority {
     constructor(authority, validateAuthority) {
         super(authority, validateAuthority);

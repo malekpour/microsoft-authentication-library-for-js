@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class ErrorMessage {
     static get authorityUriInvalidPath() { return "AuthorityUriInvalidPath"; }
     static get authorityUriInsecure() { return "AuthorityUriInsecure"; }

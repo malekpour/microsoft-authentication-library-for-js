@@ -1,7 +1,7 @@
 declare module "IUri" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export interface IUri {
         Protocol: string;
         HostNameAndPort: string;
@@ -13,8 +13,8 @@ declare module "IUri" {
 }
 declare module "ClientInfo" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class ClientInfo {
         private _uid;
         uid: string;
@@ -25,8 +25,8 @@ declare module "ClientInfo" {
 }
 declare module "IdToken" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class IdToken {
         rawIdToken: string;
         issuer: string;
@@ -64,8 +64,8 @@ declare module "Utils" {
     import { IUri } from "IUri";
     import { User } from "User";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class Utils {
         static compareObjects(u1: User, u2: User): boolean;
         static expiresIn(expires: string): number;
@@ -105,8 +105,8 @@ declare module "Utils" {
 }
 declare module "ITenantDiscoveryResponse" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export interface ITenantDiscoveryResponse {
         AuthorizationEndpoint: string;
         EndSessionEndpoint: string;
@@ -115,8 +115,8 @@ declare module "ITenantDiscoveryResponse" {
 }
 declare module "ErrorMessage" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class ErrorMessage {
         static readonly authorityUriInvalidPath: string;
         static readonly authorityUriInsecure: string;
@@ -127,10 +127,10 @@ declare module "ErrorMessage" {
 }
 declare module "XhrClient" {
     /**
-      * XHR client for JSON endpoints
-      * https://www.npmjs.com/package/async-promise
-      * @hidden
-      */
+    * XHR client for JSON endpoints
+    * https://www.npmjs.com/package/async-promise
+    * @hidden
+    */
     export class XhrClient {
         sendRequestAsync(url: string, method: string, enableCaching?: boolean): Promise<any>;
         protected handleError(responseText: string): any;
@@ -139,16 +139,16 @@ declare module "XhrClient" {
 declare module "Authority" {
     import { IUri } from "IUri";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export enum AuthorityType {
         Aad = 0,
         Adfs = 1,
         B2C = 2,
     }
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export abstract class Authority {
         protected constructor(authority: string, validateAuthority: boolean);
         readonly abstract AuthorityType: AuthorityType;
@@ -173,8 +173,8 @@ declare module "Authority" {
 declare module "AadAuthority" {
     import { Authority, AuthorityType } from "Authority";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class AadAuthority extends Authority {
         private static readonly AadInstanceDiscoveryEndpoint;
         private readonly AadInstanceDiscoveryEndpointUrl;
@@ -187,8 +187,8 @@ declare module "AadAuthority" {
 }
 declare module "AccessTokenKey" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class AccessTokenKey {
         authority: string;
         clientId: string;
@@ -199,8 +199,8 @@ declare module "AccessTokenKey" {
 }
 declare module "AccessTokenValue" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class AccessTokenValue {
         accessToken: string;
         idToken: string;
@@ -213,8 +213,8 @@ declare module "AccessTokenCacheItem" {
     import { AccessTokenKey } from "AccessTokenKey";
     import { AccessTokenValue } from "AccessTokenValue";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class AccessTokenCacheItem {
         key: AccessTokenKey;
         value: AccessTokenValue;
@@ -224,8 +224,8 @@ declare module "AccessTokenCacheItem" {
 declare module "AuthenticationRequestParameters" {
     import { Authority } from "Authority";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class AuthenticationRequestParameters {
         authorityInstance: Authority;
         clientId: string;
@@ -252,8 +252,8 @@ declare module "B2cAuthority" {
     import { AadAuthority } from "AadAuthority";
     import { AuthorityType } from "Authority";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class B2cAuthority extends AadAuthority {
         constructor(authority: string, validateAuthority: boolean);
         readonly AuthorityType: AuthorityType;
@@ -269,8 +269,8 @@ declare module "AuthorityFactory" {
 }
 declare module "Constants" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class Constants {
         static readonly errorDescription: string;
         static readonly error: string;
@@ -283,6 +283,10 @@ declare module "Constants" {
         static readonly accessToken: string;
         static readonly expiresIn: string;
         static readonly sessionState: string;
+        static readonly msalClientInfo: string;
+        static readonly msalError: string;
+        static readonly msalErrorDescription: string;
+        static readonly msalSessionState: string;
         static readonly tokenKeys: string;
         static readonly accessTokenKey: string;
         static readonly expirationKey: string;
@@ -295,6 +299,7 @@ declare module "Constants" {
         static readonly loginRequest: string;
         static readonly loginError: string;
         static readonly renewStatus: string;
+        static readonly msal: string;
         static readonly resourceDelimeter: string;
         private static _loadFrameTimeout;
         static loadFrameTimeout: number;
@@ -319,6 +324,7 @@ declare module "Constants" {
         static readonly endpointResolutionError: string;
         static readonly popUpWindowError: string;
         static readonly userLoginError: string;
+        static readonly userCancelledError: string;
     }
     /**
     * @hidden
@@ -330,6 +336,7 @@ declare module "Constants" {
         static readonly endpointResolutionError: string;
         static readonly popUpWindowError: string;
         static readonly userLoginError: string;
+        static readonly userCancelledError: string;
     }
 }
 declare module "Logger" {
@@ -413,8 +420,8 @@ declare module "Logger" {
 declare module "RequestContext" {
     import { Logger } from "Logger";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class RequestContext {
         private static _instance;
         private _correlationId;
@@ -427,8 +434,8 @@ declare module "RequestContext" {
 declare module "Storage" {
     import { AccessTokenCacheItem } from "AccessTokenCacheItem";
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class Storage {
         private static _instance;
         private _localStorageSupported;
@@ -446,8 +453,8 @@ declare module "Storage" {
 }
 declare module "RequestInfo" {
     /**
-      * @hidden
-      */
+    * @hidden
+    */
     export class TokenResponse {
         valid: boolean;
         parameters: Object;
@@ -564,6 +571,14 @@ declare module "UserAgentApplication" {
         */
         private _navigateToLoginRequestUrl;
         /**
+        * Used to keep track of opened popup windows.
+        */
+        private _openedWindows;
+        /**
+        * Used to track the authentication request.
+        */
+        private _requestType;
+        /**
         * Initialize a UserAgentApplication with a given clientId and authority.
         * @constructor
         * @param {string} clientId - The clientID of your application, you should get this from the application registration portal.
@@ -574,7 +589,7 @@ declare module "UserAgentApplication" {
         * @param _tokenReceivedCallback -  The function that will get the call back once this API is completed (either successfully or with a failure).
         * @param {boolean} validateAuthority -  boolean to turn authority validation on/off.
         */
-        constructor(clientId: string, authority: string, tokenReceivedCallback: tokenReceivedCallback, {validateAuthority, cacheLocation, redirectUri, postLogoutRedirectUri, navigateToLoginRequestUrl}?: {
+        constructor(clientId: string, authority: string, tokenReceivedCallback: tokenReceivedCallback, options?: {
             validateAuthority?: boolean;
             cacheLocation?: string;
             redirectUri?: string;
@@ -777,7 +792,7 @@ declare module "UserAgentApplication" {
         * @param {Function} reject - The reject function of the promise object.
         * @hidden
         */
-        handleAuthenticationResponse(hash: string, resolve?: Function, reject?: Function): void;
+        handleAuthenticationResponse(hash: string): void;
         /**
         * This method must be called for processing the response received from AAD. It extracts the hash, processes the token or error, saves it in the cache and calls the registered callbacks with the result.
         * @param {string} authority authority received in the redirect response from AAD.
@@ -824,6 +839,12 @@ declare module "UserAgentApplication" {
          * @hidden
          */
         private getScopeFromState(state);
+        /**
+         * Returns whether current window is in ifram for token renewal
+         * @ignore
+         * @hidden
+         */
+        private isInIframe();
     }
 }
 declare module "index" {

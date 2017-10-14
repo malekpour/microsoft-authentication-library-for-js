@@ -1,7 +1,7 @@
 import { Logger } from './Logger';
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class RequestContext {
     get correlationId() { return this._correlationId; }
     get logger() { return this._logger; }

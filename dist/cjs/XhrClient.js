@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * XHR client for JSON endpoints
-  * https://www.npmjs.com/package/async-promise
-  * @hidden
-  */
+* XHR client for JSON endpoints
+* https://www.npmjs.com/package/async-promise
+* @hidden
+*/
 var XhrClient = (function () {
     function XhrClient() {
     }

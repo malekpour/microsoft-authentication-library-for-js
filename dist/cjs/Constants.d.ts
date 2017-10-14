@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class Constants {
     static readonly errorDescription: string;
     static readonly error: string;
@@ -13,6 +13,10 @@ export declare class Constants {
     static readonly accessToken: string;
     static readonly expiresIn: string;
     static readonly sessionState: string;
+    static readonly msalClientInfo: string;
+    static readonly msalError: string;
+    static readonly msalErrorDescription: string;
+    static readonly msalSessionState: string;
     static readonly tokenKeys: string;
     static readonly accessTokenKey: string;
     static readonly expirationKey: string;
@@ -25,6 +29,7 @@ export declare class Constants {
     static readonly loginRequest: string;
     static readonly loginError: string;
     static readonly renewStatus: string;
+    static readonly msal: string;
     static readonly resourceDelimeter: string;
     private static _loadFrameTimeout;
     static loadFrameTimeout: number;
@@ -49,6 +54,7 @@ export declare class ErrorCodes {
     static readonly endpointResolutionError: string;
     static readonly popUpWindowError: string;
     static readonly userLoginError: string;
+    static readonly userCancelledError: string;
 }
 /**
 * @hidden
@@ -60,4 +66,5 @@ export declare class ErrorDescription {
     static readonly endpointResolutionError: string;
     static readonly popUpWindowError: string;
     static readonly userLoginError: string;
+    static readonly userCancelledError: string;
 }

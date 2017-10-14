@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var AccessTokenCacheItem = (function () {
     function AccessTokenCacheItem(key, value) {
         this.key = key;

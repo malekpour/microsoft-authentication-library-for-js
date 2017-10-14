@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var AccessTokenValue = (function () {
     function AccessTokenValue(accessToken, idToken, expiresIn, clientInfo) {
         this.accessToken = accessToken;

@@ -2,8 +2,8 @@ import { AccessTokenKey } from "./AccessTokenKey";
 import { AccessTokenValue } from "./AccessTokenValue";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AccessTokenCacheItem {
 
   key: AccessTokenKey;

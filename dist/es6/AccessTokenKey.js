@@ -1,7 +1,7 @@
 import { Utils } from "./Utils";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AccessTokenKey {
     constructor(authority, clientId, scopes, uid, utid) {
         this.authority = authority;

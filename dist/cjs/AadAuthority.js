@@ -13,8 +13,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Authority_1 = require("./Authority");
 var XhrClient_1 = require("./XhrClient");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var AadAuthority = (function (_super) {
     __extends(AadAuthority, _super);
     function AadAuthority(authority, validateAuthority) {

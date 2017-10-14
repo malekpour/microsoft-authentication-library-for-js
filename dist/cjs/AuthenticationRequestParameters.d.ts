@@ -1,7 +1,7 @@
 import { Authority } from "./Authority";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class AuthenticationRequestParameters {
     authorityInstance: Authority;
     clientId: string;

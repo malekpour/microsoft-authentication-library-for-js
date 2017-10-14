@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var TokenResponse = (function () {
     function TokenResponse() {
         this.valid = false;

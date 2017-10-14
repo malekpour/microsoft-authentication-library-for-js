@@ -1,6 +1,6 @@
 {
   "name": "msalx",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Modified version of Microsoft Authentication Library Preview (MSAL) for JS supporting multiple target",
   "main": "index.js",
   "scripts": {

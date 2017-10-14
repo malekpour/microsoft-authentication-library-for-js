@@ -1,7 +1,7 @@
 import { Utils } from "./Utils";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class ClientInfo {
     get uid() {
         return this._uid ? this._uid : "";

@@ -91,8 +91,10 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_useragentapplication_.useragentapplication.html#_navigatetologinrequesturl" class="tsd-kind-icon">_navigate<wbr>ToLogin<wbr>Request<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_useragentapplication_.useragentapplication.html#_openedwindows" class="tsd-kind-icon">_opened<wbr>Windows</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_useragentapplication_.useragentapplication.html#_postlogoutredirecturi" class="tsd-kind-icon">_post<wbr>Logoutredirect<wbr>Uri</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_useragentapplication_.useragentapplication.html#_redirecturi" class="tsd-kind-icon">_redirect<wbr>Uri</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_useragentapplication_.useragentapplication.html#_requesttype" class="tsd-kind-icon">_request<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_useragentapplication_.useragentapplication.html#clientid" class="tsd-kind-icon">client<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_useragentapplication_.useragentapplication.html#validateauthority" class="tsd-kind-icon">validate<wbr>Authority</a></li>
 							</ul>
@@ -126,13 +128,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>User<wbr>Agent<wbr>Application<span class="tsd-signature-symbol">(</span>clientId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, authority<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tokenReceivedCallback<span class="tsd-signature-symbol">: </span><a href="" class="tsd-signature-type">tokenReceivedCallback</a>, __namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_useragentapplication_.useragentapplication.html" class="tsd-signature-type">UserAgentApplication</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>User<wbr>Agent<wbr>Application<span class="tsd-signature-symbol">(</span>clientId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, authority<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tokenReceivedCallback<span class="tsd-signature-symbol">: </span><a href="" class="tsd-signature-type">tokenReceivedCallback</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_useragentapplication_.useragentapplication.html" class="tsd-signature-type">UserAgentApplication</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L174">UserAgentApplication.ts:174</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L192">UserAgentApplication.ts:192</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -171,25 +173,22 @@
 									<h5>tokenReceivedCallback: <a href="" class="tsd-signature-type">tokenReceivedCallback</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter">
-											<h5>cache<wbr>Location<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> cache<wbr>Location<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
 										</li>
 										<li class="tsd-parameter">
-											<h5>navigate<wbr>ToLogin<wbr>Request<wbr>Url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> navigate<wbr>ToLogin<wbr>Request<wbr>Url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
 										</li>
 										<li class="tsd-parameter">
-											<h5>post<wbr>Logout<wbr>Redirect<wbr>Uri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> post<wbr>Logout<wbr>Redirect<wbr>Uri<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
 										</li>
 										<li class="tsd-parameter">
-											<h5>redirect<wbr>Uri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> redirect<wbr>Uri<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
 										</li>
 										<li class="tsd-parameter">
-											<h5>validate<wbr>Authority<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>boolean to turn authority validation on/off.</p>
-											</div>
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> validate<wbr>Authority<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
 										</li>
 									</ul>
 								</li>
@@ -207,7 +206,7 @@
 					<div class="tsd-signature tsd-kind-icon">_navigate<wbr>ToLogin<wbr>Request<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L174">UserAgentApplication.ts:174</a></li>
+							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L182">UserAgentApplication.ts:182</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -218,12 +217,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_openedwindows" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _opened<wbr>Windows</h3>
+					<div class="tsd-signature tsd-kind-icon">_opened<wbr>Windows<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Window</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L187">UserAgentApplication.ts:187</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used to keep track of opened popup windows.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_postlogoutredirecturi" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _post<wbr>Logoutredirect<wbr>Uri</h3>
 					<div class="tsd-signature tsd-kind-icon">_post<wbr>Logoutredirect<wbr>Uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L168">UserAgentApplication.ts:168</a></li>
+							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L176">UserAgentApplication.ts:176</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -239,7 +253,7 @@
 					<div class="tsd-signature tsd-kind-icon">_redirect<wbr>Uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L162">UserAgentApplication.ts:162</a></li>
+							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L170">UserAgentApplication.ts:170</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -249,13 +263,28 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_requesttype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _request<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">_request<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L192">UserAgentApplication.ts:192</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Used to track the authentication request.</p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="clientid" class="tsd-anchor"></a>
 					<h3>client<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">client<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L127">UserAgentApplication.ts:127</a></li>
+							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L135">UserAgentApplication.ts:135</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -270,7 +299,7 @@
 					<div class="tsd-signature tsd-kind-icon">validate<wbr>Authority<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L156">UserAgentApplication.ts:156</a></li>
+							<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L164">UserAgentApplication.ts:164</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -294,7 +323,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L148">UserAgentApplication.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L156">UserAgentApplication.ts:156</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -307,7 +336,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L141">UserAgentApplication.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L149">UserAgentApplication.ts:149</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -335,7 +364,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L62">UserAgentApplication.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L70">UserAgentApplication.ts:70</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -363,7 +392,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L859">UserAgentApplication.ts:859</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L887">UserAgentApplication.ts:887</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -389,7 +418,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L860">UserAgentApplication.ts:860</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L888">UserAgentApplication.ts:888</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -406,7 +435,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L861">UserAgentApplication.ts:861</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L889">UserAgentApplication.ts:889</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -426,7 +455,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L862">UserAgentApplication.ts:862</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L890">UserAgentApplication.ts:890</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -461,7 +490,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L782">UserAgentApplication.ts:782</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L809">UserAgentApplication.ts:809</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -484,7 +513,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L783">UserAgentApplication.ts:783</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L810">UserAgentApplication.ts:810</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -501,7 +530,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L784">UserAgentApplication.ts:784</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L811">UserAgentApplication.ts:811</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -521,7 +550,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L785">UserAgentApplication.ts:785</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L812">UserAgentApplication.ts:812</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -553,7 +582,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L952">UserAgentApplication.ts:952</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L987">UserAgentApplication.ts:987</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -612,7 +641,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L666">UserAgentApplication.ts:666</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L693">UserAgentApplication.ts:693</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -634,7 +663,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L1161">UserAgentApplication.ts:1161</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L1205">UserAgentApplication.ts:1205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -656,7 +685,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L293">UserAgentApplication.ts:293</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L311">UserAgentApplication.ts:311</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -696,7 +725,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L239">UserAgentApplication.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L256">UserAgentApplication.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -733,7 +762,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L422">UserAgentApplication.ts:422</a></li>
+									<li>Defined in <a href="https://github.com/malekpour/microsoft-authentication-library-for-js/blob/dev/src/UserAgentApplication.ts#L449">UserAgentApplication.ts:449</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -839,10 +868,16 @@
 								<a href="_useragentapplication_.useragentapplication.html#_navigatetologinrequesturl" class="tsd-kind-icon">_navigate<wbr>ToLogin<wbr>Request<wbr>Url</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_useragentapplication_.useragentapplication.html#_openedwindows" class="tsd-kind-icon">_opened<wbr>Windows</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_useragentapplication_.useragentapplication.html#_postlogoutredirecturi" class="tsd-kind-icon">_post<wbr>Logoutredirect<wbr>Uri</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_useragentapplication_.useragentapplication.html#_redirecturi" class="tsd-kind-icon">_redirect<wbr>Uri</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_useragentapplication_.useragentapplication.html#_requesttype" class="tsd-kind-icon">_request<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_useragentapplication_.useragentapplication.html#clientid" class="tsd-kind-icon">client<wbr>Id</a>
@@ -886,6 +921,9 @@
 				<ul class="after-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
 						<a href="../modules/_useragentapplication_.html#tokenreceivedcallback" class="tsd-kind-icon">token<wbr>Received<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_useragentapplication_.html#resolvetokenonlyifoutofiframe" class="tsd-kind-icon">resolve<wbr>Token<wbr>Only<wbr>IfOut<wbr>OfIframe</a>
 					</li>
 				</ul>
 			</nav>

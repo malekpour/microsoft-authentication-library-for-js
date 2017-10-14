@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var AccessTokenCacheItem_1 = require("./AccessTokenCacheItem");
+var Constants_1 = require("./Constants");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var Storage = (function () {
     function Storage(cacheLocation) {
         if (Storage._instance) {
@@ -98,7 +99,7 @@ var Storage = (function () {
         if (storage) {
             var key = void 0;
             for (key in storage) {
-                if (storage.hasOwnProperty(key)) {
+                if (storage.hasOwnProperty(key) && key.indexOf(Constants_1.Constants.msal) !== -1) {
                     storage[key] = "";
                 }
             }

@@ -104,6 +104,14 @@ export declare class UserAgentApplication {
     */
     private _navigateToLoginRequestUrl;
     /**
+    * Used to keep track of opened popup windows.
+    */
+    private _openedWindows;
+    /**
+    * Used to track the authentication request.
+    */
+    private _requestType;
+    /**
     * Initialize a UserAgentApplication with a given clientId and authority.
     * @constructor
     * @param {string} clientId - The clientID of your application, you should get this from the application registration portal.
@@ -114,7 +122,7 @@ export declare class UserAgentApplication {
     * @param _tokenReceivedCallback -  The function that will get the call back once this API is completed (either successfully or with a failure).
     * @param {boolean} validateAuthority -  boolean to turn authority validation on/off.
     */
-    constructor(clientId: string, authority: string, tokenReceivedCallback: tokenReceivedCallback, {validateAuthority, cacheLocation, redirectUri, postLogoutRedirectUri, navigateToLoginRequestUrl}?: {
+    constructor(clientId: string, authority: string, tokenReceivedCallback: tokenReceivedCallback, options?: {
         validateAuthority?: boolean;
         cacheLocation?: string;
         redirectUri?: string;
@@ -317,7 +325,7 @@ export declare class UserAgentApplication {
     * @param {Function} reject - The reject function of the promise object.
     * @hidden
     */
-    handleAuthenticationResponse(hash: string, resolve?: Function, reject?: Function): void;
+    handleAuthenticationResponse(hash: string): void;
     /**
     * This method must be called for processing the response received from AAD. It extracts the hash, processes the token or error, saves it in the cache and calls the registered callbacks with the result.
     * @param {string} authority authority received in the redirect response from AAD.
@@ -364,4 +372,10 @@ export declare class UserAgentApplication {
      * @hidden
      */
     private getScopeFromState(state);
+    /**
+     * Returns whether current window is in ifram for token renewal
+     * @ignore
+     * @hidden
+     */
+    private isInIframe();
 }

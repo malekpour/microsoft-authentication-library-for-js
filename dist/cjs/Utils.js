@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var Utils = (function () {
     function Utils() {
     }
@@ -216,7 +216,7 @@ var Utils = (function () {
         return hex;
     };
     Utils.getLibraryVersion = function () {
-        return "0.1.1";
+        return "0.1.2";
     };
     /**
      * Given a url like https://a:b/common/d?e=f#g, and a tenantId, returns https://a:b/tenantId/d

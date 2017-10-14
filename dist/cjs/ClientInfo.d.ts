@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class ClientInfo {
     private _uid;
     uid: string;

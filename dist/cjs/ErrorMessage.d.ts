@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class ErrorMessage {
     static readonly authorityUriInvalidPath: string;
     static readonly authorityUriInsecure: string;

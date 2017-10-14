@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = require("./Utils");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var ClientInfo = (function () {
     function ClientInfo(rawClientInfo) {
         if (!rawClientInfo || Utils_1.Utils.isEmpty(rawClientInfo)) {

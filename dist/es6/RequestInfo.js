@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class TokenResponse {
     constructor() {
         this.valid = false;

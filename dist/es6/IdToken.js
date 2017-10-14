@@ -1,7 +1,7 @@
 import { Utils } from "./Utils";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class IdToken {
     constructor(rawIdToken) {
         if (Utils.isEmpty(rawIdToken)) {

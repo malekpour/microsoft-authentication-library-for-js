@@ -1,7 +1,7 @@
 import { Authority, AuthorityType } from "./Authority";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class AadAuthority extends Authority {
     private static readonly AadInstanceDiscoveryEndpoint;
     private readonly AadInstanceDiscoveryEndpointUrl;

@@ -4,8 +4,8 @@ import { Utils } from "./Utils";
 import { ErrorMessage } from "./ErrorMessage";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class B2cAuthority extends AadAuthority {
   public constructor(authority: string, validateAuthority: boolean) {
     super(authority, validateAuthority);

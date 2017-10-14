@@ -1,7 +1,7 @@
 import { Utils } from "./Utils";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AuthenticationRequestParameters {
     get authority() {
         return this.authorityInstance.CanonicalAuthority;

@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var Constants = (function () {
     function Constants() {
     }
@@ -58,6 +58,26 @@ var Constants = (function () {
     });
     Object.defineProperty(Constants, "sessionState", {
         get: function () { return "session_state"; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Constants, "msalClientInfo", {
+        get: function () { return "msal.client.info"; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Constants, "msalError", {
+        get: function () { return "msal.error"; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Constants, "msalErrorDescription", {
+        get: function () { return "msal.error.description"; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Constants, "msalSessionState", {
+        get: function () { return "msal.session.state"; },
         enumerable: true,
         configurable: true
     });
@@ -118,6 +138,11 @@ var Constants = (function () {
     });
     Object.defineProperty(Constants, "renewStatus", {
         get: function () { return "msal.token.renew.status"; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Constants, "msal", {
+        get: function () { return "msal"; },
         enumerable: true,
         configurable: true
     });
@@ -228,6 +253,11 @@ var ErrorCodes = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(ErrorCodes, "userCancelledError", {
+        get: function () { return "user_cancelled"; },
+        enumerable: true,
+        configurable: true
+    });
     return ErrorCodes;
 }());
 exports.ErrorCodes = ErrorCodes;
@@ -264,6 +294,11 @@ var ErrorDescription = (function () {
     });
     Object.defineProperty(ErrorDescription, "userLoginError", {
         get: function () { return "User login is required"; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ErrorDescription, "userCancelledError", {
+        get: function () { return "User closed the popup window window and cancelled the flow"; },
         enumerable: true,
         configurable: true
     });

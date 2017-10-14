@@ -1,8 +1,8 @@
 /**
-  * XHR client for JSON endpoints
-  * https://www.npmjs.com/package/async-promise
-  * @hidden
-  */
+* XHR client for JSON endpoints
+* https://www.npmjs.com/package/async-promise
+* @hidden
+*/
 export class XhrClient {
     sendRequestAsync(url, method, enableCaching) {
         return new Promise((resolve, reject) => {

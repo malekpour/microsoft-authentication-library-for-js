@@ -1,1 +1,1 @@
-{"version":3,"file":"AccessTokenCacheItem.js","sourceRoot":"","sources":["../../src/AccessTokenCacheItem.ts"],"names":[],"mappings":"AAGA;;IAEI;AACJ,MAAM;IAKJ,YAAY,GAAmB,EAAE,KAAuB;QACtD,IAAI,CAAC,GAAG,GAAG,GAAG,CAAC;QACf,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACrB,CAAC;CACF"}
+{"version":3,"file":"AccessTokenCacheItem.js","sourceRoot":"","sources":["../../src/AccessTokenCacheItem.ts"],"names":[],"mappings":"AAGA;;EAEE;AACF,MAAM;IAKJ,YAAY,GAAmB,EAAE,KAAuB;QACtD,IAAI,CAAC,GAAG,GAAG,GAAG,CAAC;QACf,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACrB,CAAC;CACF"}

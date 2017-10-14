@@ -1,7 +1,8 @@
 import { AccessTokenCacheItem } from "./AccessTokenCacheItem";
+import { Constants } from "./Constants";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class Storage {
     constructor(cacheLocation) {
         if (Storage._instance) {
@@ -96,7 +97,7 @@ export class Storage {
         if (storage) {
             let key;
             for (key in storage) {
-                if (storage.hasOwnProperty(key)) {
+                if (storage.hasOwnProperty(key) && key.indexOf(Constants.msal) !== -1) {
                     storage[key] = "";
                 }
             }

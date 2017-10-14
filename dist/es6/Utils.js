@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class Utils {
     static compareObjects(u1, u2) {
         if (!u1 || !u2)
@@ -212,7 +212,7 @@ export class Utils {
         return hex;
     }
     static getLibraryVersion() {
-        return "0.1.1";
+        return "0.1.2";
     }
     /**
      * Given a url like https://a:b/common/d?e=f#g, and a tenantId, returns https://a:b/tenantId/d

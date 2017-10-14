@@ -1,8 +1,8 @@
 import { Logger } from './Logger';
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class RequestContext {
 
   private static _instance: RequestContext;

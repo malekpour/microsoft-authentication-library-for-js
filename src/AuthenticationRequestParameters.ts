@@ -2,8 +2,8 @@ import { Authority } from "./Authority";
 import { Utils } from "./Utils";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AuthenticationRequestParameters {
   authorityInstance: Authority;
   clientId: string;

@@ -2,8 +2,8 @@ import { Authority, AuthorityType } from "./Authority";
 import { XhrClient } from "./XhrClient";
 
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AadAuthority extends Authority {
   private static readonly AadInstanceDiscoveryEndpoint: string = "https://login.microsoftonline.com/common/discovery/instance";
 

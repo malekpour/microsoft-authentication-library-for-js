@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AccessTokenValue {
 
   accessToken: string;

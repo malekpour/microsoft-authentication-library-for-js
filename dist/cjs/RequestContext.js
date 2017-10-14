@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Logger_1 = require("./Logger");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var RequestContext = (function () {
     function RequestContext(correlationId) {
         if (RequestContext._instance) {

@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class IdToken {
     rawIdToken: string;
     issuer: string;

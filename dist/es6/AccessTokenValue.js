@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AccessTokenValue {
     constructor(accessToken, idToken, expiresIn, clientInfo) {
         this.accessToken = accessToken;

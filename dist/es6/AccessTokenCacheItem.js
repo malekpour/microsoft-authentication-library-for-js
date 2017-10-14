@@ -1,6 +1,6 @@
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export class AccessTokenCacheItem {
     constructor(key, value) {
         this.key = key;

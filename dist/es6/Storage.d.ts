@@ -1,7 +1,7 @@
 import { AccessTokenCacheItem } from "./AccessTokenCacheItem";
 /**
-  * @hidden
-  */
+* @hidden
+*/
 export declare class Storage {
     private static _instance;
     private _localStorageSupported;

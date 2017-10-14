@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Utils_1 = require("./Utils");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var AccessTokenKey = (function () {
     function AccessTokenKey(authority, clientId, scopes, uid, utid) {
         this.authority = authority;

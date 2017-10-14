@@ -15,8 +15,8 @@ var Authority_1 = require("./Authority");
 var Utils_1 = require("./Utils");
 var ErrorMessage_1 = require("./ErrorMessage");
 /**
-  * @hidden
-  */
+* @hidden
+*/
 var B2cAuthority = (function (_super) {
     __extends(B2cAuthority, _super);
     function B2cAuthority(authority, validateAuthority) {
